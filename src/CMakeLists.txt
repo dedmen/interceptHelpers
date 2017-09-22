@@ -20,6 +20,8 @@ endif()
 
 project(${PLUGIN_NAME})
 
+set( CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} /std:c++latest" )
+
 # Double detection is necessary as 'project' wipes previous 'set's
 #if("${CMAKE_GENERATOR}" MATCHES "Visual Studio 15 2017 Win64")
 #	set( CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} /std:c++latest" )
