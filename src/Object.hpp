@@ -13,65 +13,65 @@ namespace intercept
 		protected:
 			object _obj;
 		public:
-			void setPos(vector3 vec)
+			void set_pos(vector3 vec)
 			{
 				sqf::set_pos(this->_obj, vec);
 			}
-			void setPosAsl(vector3 vec)
+			void set_pos_asl(vector3 vec)
 			{
 				sqf::set_pos_asl(this->_obj, vec);
 			}
-			void setPosAsl2(vector3 vec)
+			void set_pos_asl2(vector3 vec)
 			{
 				sqf::set_pos_asl2(this->_obj, vec);
 			}
-			void setPosAslw(vector3 vec)
+			void set_pos_aslw(vector3 vec)
 			{
 				sqf::set_pos_aslw(this->_obj, vec);
 			}
-			void setPosAtl(vector3 vec)
+			void set_pos_atl(vector3 vec)
 			{
 				sqf::set_pos_atl(this->_obj, vec);
 			}
-			void setPosWorld(vector3 vec)
+			void set_pos_world(vector3 vec)
 			{
 				sqf::set_pos_world(this->_obj, vec);
 			}
 
-			vector3 getPos()
+			vector3 get_pos()
 			{
 				return sqf::get_pos(this->_obj);
 			}
-			vector3 getPosAsl()
+			vector3 get_pos_asl()
 			{
 				return sqf::get_pos_asl(this->_obj);
 			}
-			vector3 getPosAslVisual()
+			vector3 get_pos_asl_visual()
 			{
 				return sqf::get_pos_asl_visual(this->_obj);
 			}
-			vector3 getPosAslw()
+			vector3 get_pos_aslw()
 			{
 				return sqf::get_pos_aslw(this->_obj);
 			}
-			vector3 getPosAtl()
+			vector3 get_pos_atl()
 			{
 				return sqf::get_pos_atl(this->_obj);
 			}
-			vector3 getPosAtlVisual()
+			vector3 get_pos_atl_visual()
 			{
 				return sqf::get_pos_atl_visual(this->_obj);
 			}
-			vector3 getPosVisual()
+			vector3 get_pos_visual()
 			{
 				return sqf::get_pos_visual(this->_obj);
 			}
-			vector3 getPosWorld()
+			vector3 get_pos_world()
 			{
 				return sqf::get_pos_world(this->_obj);
 			}
 
-			bool isAlive()
+			bool is_alive()
 			{
 				return sqf::alive(this->_obj);
 			}
@@ -79,11 +79,11 @@ namespace intercept
 			{
 				sqf::detach(this->_obj);
 			}
-			std::vector<float> actionIds()
+			std::vector<float> action_ids()
 			{
 				// TODO Add sqf
 			}
-			void attachTo(object obj, vector3 offset, r_string memPoint)
+			void attach_to(object obj, vector3 offset, r_string memPoint)
 			{
 				sqf::attach_to(this->_obj, obj, offset, memPoint);
 			}
@@ -95,7 +95,7 @@ namespace intercept
 			{
 				return sqf::name(this->_obj);
 			}
-			r_string typeOf()
+			r_string type_of()
 			{
 				return sqf::type_of(this->_obj);
 			}
@@ -107,7 +107,7 @@ namespace intercept
 			{
 				return sqf::inflamed(this->_obj);
 			}
-			void removeAction(float index)
+			void remove_action(float index)
 			{
 				// TODO add sqf
 			}
@@ -115,15 +115,15 @@ namespace intercept
 			{
 				// TODO add sqf
 			}
-			object objectParent()
+			object object_parent()
 			{
 				return sqf::object_parent(this->_obj);
 			}
-			std::vector<intercept::sqf::rv_container> everyContainer()
+			std::vector<intercept::sqf::rv_container> every_container()
 			{
 				return sqf::every_container(this->_obj);
 			}
-			std::vector<object> everyBackpack()
+			std::vector<object> every_backpack()
 			{
 				return sqf::every_backpack(this->_obj);
 			}
@@ -131,31 +131,31 @@ namespace intercept
 			{
 				return sqf::damage(this->_obj);
 			}
-			void setDamage(float damage)
+			void set_damage(float damage)
 			{
 				sqf::set_damage(this->_obj, damage);
 			}
-			float getHit(r_string selection)
+			float get_hit(r_string selection)
 			{
 				return sqf::get_hit(this->_obj, selection);
 			}
-			float getHitpointDamage(r_string selection)
+			float get_hitpoint_damage(r_string selection)
 			{
 				return sqf::get_hit_point_damage(this->_obj, selection);
 			}
-			void setHit(r_string part, float damage, bool useEffects)
+			void set_hit(r_string part, float damage, bool useEffects)
 			{
 				sqf::set_hit(this->_obj, part, damage);
 			}
-			void setHitpointDamage(r_string selection, float damage, bool usEffects)
+			void set_hitpoint_damage(r_string selection, float damage, bool usEffects)
 			{
 				sqf::set_hit_point_damage(this->_obj, selection, damage);
 			}
-			void allowDamage(bool allow)
+			void allow_damage(bool allow)
 			{
 				sqf::allow_damage(this->_obj, allow);
 			}
-			bool isDamageAllowed()
+			bool is_damage_allowed()
 			{
 				return sqf::is_damage_allowed(this->_obj);
 			}

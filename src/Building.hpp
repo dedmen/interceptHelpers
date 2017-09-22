@@ -12,11 +12,11 @@ namespace intercept
 		class Building : public Object
 		{
 		public:
-			vector3 buildingExit(int index)
+			vector3 building_exit(int index)
 			{
 				return sqf::building_exit(this->_obj, index);
 			}
-			vector3 buildingPos(int index)
+			vector3 building_pos(int index)
 			{
 				if (index < 0) // Invalid call!
 				{
