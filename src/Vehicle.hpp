@@ -28,9 +28,9 @@ namespace intercept
 			{
 				sqf::set_vehicle_radar(this->_obj, rule);
 			}
-			object rope_create()
+			object rope_create() // TODO Add decleration and sqf
 			{
-				sqf::rope_create();
+				
 			}
 		};
 	}
