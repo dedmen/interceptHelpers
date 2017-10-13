@@ -2,6 +2,7 @@
 
 #include <intercept.hpp>
 #include "Object.hpp"
+#include "Vehicle.hpp"
 
 using namespace intercept::types;
 
@@ -12,6 +13,9 @@ namespace intercept
 		class Person : public Object
 		{
 		public:
+			// Inherit constructor from Object
+			using Object::Object;
+
 			void add_magazine(r_string name)
 			{
 				sqf::add_magazine(this->_obj, name);
@@ -56,9 +60,9 @@ namespace intercept
 			{
 				return sqf::primary_weapon(this->_obj);
 			}
-			object vehicle()
+			Vehicle vehicle()
 			{
-				return sqf::vehicle(this->_obj);
+				return Vehicle(sqf::vehicle(this->_obj));
 			}
 		};
 	}

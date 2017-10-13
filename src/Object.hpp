@@ -13,6 +13,11 @@ namespace intercept
 		protected:
 			object _obj;
 		public:
+			Object(object obj) { this->_obj = obj; }
+
+			// Cast operator to 'object'. Needs testing.
+			operator object() const { return _obj; }
+
 			void set_pos(vector3 vec)
 			{
 				sqf::set_pos(this->_obj, vec);

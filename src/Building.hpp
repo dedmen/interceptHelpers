@@ -12,6 +12,9 @@ namespace intercept
 		class Building : public Object
 		{
 		public:
+			// Inherit constructor from Object
+			using Object::Object;
+
 			vector3 building_exit(int index)
 			{
 				return sqf::building_exit(this->_obj, index);

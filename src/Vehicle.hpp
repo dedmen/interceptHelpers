@@ -13,6 +13,9 @@ namespace intercept
 		class Vehicle : public Object
 		{
 		public:
+			// Inherit constructor from Object
+			using Object::Object;
+
 			void set_vehicle_position() // TODO Add decleration and sqf
 			{
 				
@@ -27,7 +30,7 @@ namespace intercept
 			}
 			object rope_create()
 			{
-				sqf::rope_create()
+				sqf::rope_create();
 			}
 		};
 	}

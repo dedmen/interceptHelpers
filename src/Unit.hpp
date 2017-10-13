@@ -12,6 +12,9 @@ namespace intercept
 		class Unit : public Object
 		{
 		public:
+			// Inherit constructor from Object
+			using Object::Object;
+
 			group get_group()
 			{
 				return sqf::get_group(this->_obj);
