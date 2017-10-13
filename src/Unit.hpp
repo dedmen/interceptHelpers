@@ -2,6 +2,7 @@
 
 #include <intercept.hpp>
 #include "Object.hpp"
+#include "Group.hpp"
 
 using namespace intercept::types;
 
@@ -15,7 +16,7 @@ namespace intercept
 			// Inherit constructor from Object
 			using Object::Object;
 
-			group get_group()
+			Group get_group()
 			{
 				return sqf::get_group(this->_obj);
 			}

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <intercept.hpp>
+#include "Container.hpp"
 
 using namespace intercept::types;
 
@@ -88,7 +89,7 @@ namespace intercept
 			{
 				// TODO Add sqf
 			}
-			void attach_to(object obj, vector3 offset, r_string memPoint)
+			void attach_to(Object obj, vector3 offset, r_string memPoint)
 			{
 				sqf::attach_to(this->_obj, obj, offset, memPoint);
 			}
@@ -116,7 +117,7 @@ namespace intercept
 			{
 				// TODO add sqf
 			}
-			void reveal(object target)
+			void reveal(Object target)
 			{
 				// TODO add sqf
 			}
@@ -124,13 +125,19 @@ namespace intercept
 			{
 				return sqf::object_parent(this->_obj);
 			}
-			std::vector<intercept::sqf::rv_container> every_container()
+			std::vector<Container> every_container() // Should propably use pointers here
 			{
-				return sqf::every_container(this->_obj);
+				auto sqfResult = sqf::every_container(this->_obj);
+				auto result = std::vector<Container>();
+				std::transform(sqfResult.begin(), sqfResult.end(), std::back_inserter(result), [](sqf::rv_container c) -> Container { return Container(c.container, c.type); });
+				return result;
 			}
-			std::vector<object> every_backpack()
+			std::vector<Container> every_backpack()
 			{
-				return sqf::every_backpack(this->_obj);
+				auto sqfResult = sqf::every_backpack(this->_obj);
+				auto result = std::vector<Container>();
+				std::transform(sqfResult.begin(), sqfResult.end(), std::back_inserter(result), [](object c) -> Container { return Container(c); });
+				return result;
 			}
 			float damage()
 			{

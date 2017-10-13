@@ -52,7 +52,7 @@ namespace intercept
 			{
 				return sqf::hands_hit(this->_obj);
 			}
-			void move_in_cargo(object vehicle)
+			void move_in_cargo(Vehicle vehicle)
 			{
 				sqf::move_in_cargo(this->_obj, vehicle);
 			}
@@ -62,7 +62,7 @@ namespace intercept
 			}
 			Vehicle vehicle()
 			{
-				return Vehicle(sqf::vehicle(this->_obj));
+				return sqf::vehicle(this->_obj);
 			}
 		};
 	}
