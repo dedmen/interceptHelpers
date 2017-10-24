@@ -13,8 +13,9 @@ namespace intercept
 		{
 		private:
 			group _grp;
+			group& me() { return _grp; }
 		public:
-			Group(group grp) { this->_grp = grp; }
+			Group(group& grp) { me() = grp; }
 		};
 	}
 }
