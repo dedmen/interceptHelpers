@@ -15,17 +15,17 @@ namespace intercept
 			// Inherit constructor from Object
 			using Object::Object;
 
-			vector3 building_exit(int index)
+			vector3 building_exit(const int index)
 			{
-				return sqf::building_exit(this->_obj, index);
+				return sqf::building_exit(me(), index);
 			}
-			vector3 building_pos(int index)
+			vector3 building_pos(const int index)
 			{
 				if (index < 0) // Invalid call!
 				{
 					throw std::invalid_argument("index cannot be negative!");
 				}
-				return sqf::building_pos(this->_obj, index).front();
+				return sqf::building_pos(me(), index).front();
 			}
 		};
 	}
