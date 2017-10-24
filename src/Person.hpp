@@ -16,53 +16,54 @@ namespace intercept
 			// Inherit constructor from Object
 			using Object::Object;
 
-			void add_magazine(r_string name)
+			void add_magazine(const r_string& name)
 			{
-				sqf::add_magazine(this->_obj, name);
+				sqf::add_magazine(me(), name);
 			}
-			void add_magazine(r_string name, int ammoCount)
+			void add_magazine(const r_string& name, const int ammo_count)
 			{
-				sqf::add_magazine(this->_obj, name, ammoCount);
+				sqf::add_magazine(me(), name, ammo_count);
 			}
-			void play_move(r_string name)
+			void play_move(const r_string& name)
 			{
-				sqf::play_move(this->_obj, name);
+				sqf::play_move(me(), name);
 			}
-			void play_move_now(r_string name)
+			void play_move_now(const r_string& name)
 			{
-				sqf::play_move_now(this->_obj, name);
+				sqf::play_move_now(me(), name);
 			}
 			void remove_all_weapons()
 			{
-				sqf::remove_all_weapons(this->_obj);
+				sqf::remove_all_weapons(me());
 			}
-			void remove_magazine(r_string magazineName)
+			void remove_magazine(const r_string& magazine_name)
 			{
-				sqf::remove_magazine(this->_obj, magazineName);
+				sqf::remove_magazine(me(), magazine_name);
 			}
-			void remove_magazines(r_string magazineName)
+			void remove_magazines(const r_string& magazine_name)
 			{
-				sqf::remove_magazines(this->_obj, magazineName);
+				sqf::remove_magazines(me(), magazine_name);
 			}
-			void remove_weapon(r_string weapon)
+			void remove_weapon(const r_string& weapon)
 			{
-				sqf::remove_weapon(this->_obj, weapon);
+				sqf::remove_weapon(me(), weapon);
 			}
 			float hands_hit()
 			{
-				return sqf::hands_hit(this->_obj);
+				return sqf::hands_hit(me());
 			}
-			void move_in_cargo(Vehicle vehicle)
+			void move_in_cargo(const Vehicle& vehicle)
 			{
-				sqf::move_in_cargo(this->_obj, vehicle);
+				sqf::move_in_cargo(me(), vehicle);
 			}
 			r_string primary_weapon()
 			{
-				return sqf::primary_weapon(this->_obj);
+				return r_string(sqf::primary_weapon(me()));
 			}
 			Vehicle vehicle()
 			{
-				return sqf::vehicle(this->_obj);
+				auto v = sqf::vehicle(me());
+				return Vehicle(v);
 			}
 		};
 	}
