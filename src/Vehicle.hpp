@@ -20,13 +20,13 @@ namespace intercept
 			{
 				
 			}
-			std::pair<bool,bool> can_vehicle_cargo(object target)
+			std::pair<bool,bool> can_vehicle_cargo(const object& target)
 			{
-				return sqf::can_vehicle_cargo(this->_obj, target);
+				return sqf::can_vehicle_cargo(me(), target);
 			}
-			void set_vehicle_radar(vehicleRadarRule rule)
+			void set_vehicle_radar(const vehicleRadarRule rule)
 			{
-				sqf::set_vehicle_radar(this->_obj, rule);
+				sqf::set_vehicle_radar(me(), rule);
 			}
 			object rope_create() // TODO Add decleration and sqf
 			{
