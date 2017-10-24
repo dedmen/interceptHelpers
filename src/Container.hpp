@@ -15,18 +15,16 @@ namespace intercept
 			std::string _type;
 			object _obj;
 		public:
-			Container (object obj)
+			Container (const object& obj)
 			{
 				this->_type = "";
 				this->_obj = obj;
 			}
-			explicit Container(object obj, std::string type)
+			explicit Container(const object& obj, const std::string& type)
 			{
 				this->_type = type;
 				this->_obj = obj;
 			}
-
-
 		};
 	}
 }
