@@ -18,31 +18,32 @@ namespace intercept
 
 			Group get_group()
 			{
-				return sqf::get_group(this->_obj);
+				auto g = sqf::get_group(me());
+				return Group(g);
 			}
 			float get_skill()
 			{
-				return sqf::skill(this->_obj);
+				return sqf::skill(me());
 			}
-			float get_skill(r_string skillType)
+			float get_skill(const r_string& skill_type)
 			{
-				return sqf::skill(this->_obj, skillType);
+				return sqf::skill(me(), skill_type);
 			}
-			void set_skill(float skill)
+			void set_skill(const float skill)
 			{
-				sqf::set_skill(this->_obj, skill);
+				sqf::set_skill(me(), skill);
 			}
-			float skill_final(r_string subSkill)
+			float skill_final(const r_string& sub_skill)
 			{
-				return sqf::skill_final(this->_obj, subSkill);
+				return sqf::skill_final(me(), sub_skill);
 			}
-			float knows_about(object target)
+			float knows_about(const object& target)
 			{
-				return sqf::knows_about(this->_obj, target);
+				return sqf::knows_about(me(), target);
 			}
-			void move(vector3 pos)
+			void move(const vector3 pos)
 			{
-				sqf::move(this->_obj, pos);
+				sqf::move(me(), pos);
 			}
 		};
 	}
