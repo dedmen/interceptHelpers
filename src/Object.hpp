@@ -21,27 +21,27 @@ namespace intercept
 			// Cast operator to 'object'. Needs testing.
 			operator object() const { return _obj; }
 
-			void set_pos(vector3 vec)
+			void set_pos(const vector3 vec)
 			{
 				sqf::set_pos(me(), vec);
 			}
-			void set_pos_asl(vector3 vec)
+			void set_pos_asl(const vector3 vec)
 			{
 				sqf::set_pos_asl(me(), vec);
 			}
-			void set_pos_asl2(vector3 vec)
+			void set_pos_asl2(const vector3 vec)
 			{
 				sqf::set_pos_asl2(me(), vec);
 			}
-			void set_pos_aslw(vector3 vec)
+			void set_pos_aslw(const vector3 vec)
 			{
 				sqf::set_pos_aslw(me(), vec);
 			}
-			void set_pos_atl(vector3 vec)
+			void set_pos_atl(const vector3 vec)
 			{
 				sqf::set_pos_atl(me(), vec);
 			}
-			void set_pos_world(vector3 vec)
+			void set_pos_world(const vector3 vec)
 			{
 				sqf::set_pos_world(me(), vec);
 			}
@@ -91,7 +91,7 @@ namespace intercept
 			{
 				// TODO Add sqf
 			}
-			void attach_to(Object& obj, vector3 offset, r_string& memPoint)
+			void attach_to(const Object& obj, const vector3 offset, const r_string& memPoint)
 			{
 				sqf::attach_to(me(), obj, offset, memPoint);
 			}
@@ -107,7 +107,7 @@ namespace intercept
 			{
 				return r_string(sqf::type_of(me()));
 			}
-			void inflame(bool burn)
+			void inflame(const bool burn)
 			{
 				sqf::inflame(me(), burn);
 			}
@@ -146,27 +146,27 @@ namespace intercept
 			{
 				return sqf::damage(me());
 			}
-			void set_damage(float damage)
+			void set_damage(const float damage)
 			{
 				sqf::set_damage(me(), damage);
 			}
-			float get_hit(r_string selection)
+			float get_hit(const r_string& selection)
 			{
 				return sqf::get_hit(me(), selection);
 			}
-			float get_hitpoint_damage(r_string selection)
+			float get_hitpoint_damage(const r_string& selection)
 			{
 				return sqf::get_hit_point_damage(me(), selection);
 			}
-			void set_hit(r_string part, float damage, bool useEffects)
+			void set_hit(const r_string& part, const float damage, const bool useEffects)
 			{
 				sqf::set_hit(me(), part, damage);
 			}
-			void set_hitpoint_damage(r_string selection, float damage, bool usEffects)
+			void set_hitpoint_damage(const r_string& selection, const float damage, const bool usEffects)
 			{
 				sqf::set_hit_point_damage(me(), selection, damage);
 			}
-			void allow_damage(bool allow)
+			void allow_damage(const bool allow)
 			{
 				sqf::allow_damage(me(), allow);
 			}
