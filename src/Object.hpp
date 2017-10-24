@@ -19,7 +19,7 @@ namespace intercept
 			Object(object& obj) { me() = obj; }
 
 			// Cast operator to 'object'. Needs testing.
-			operator object() const { return _obj; }
+			operator const object&() const { return  _obj; }
 
 			void set_pos(const vector3 vec)
 			{
